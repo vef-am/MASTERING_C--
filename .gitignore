@@ -1,0 +1,19 @@
+# Ignore executables
+*.o
+*.exe
+*.out
+a.out
+
+# In my_code, ignore generated binaries by default,
+# but keep C++ source/header files tracked.
+/my_code/*
+!/my_code/*.cpp
+!/my_code/*.cc
+!/my_code/*.cxx
+!/my_code/*.c
+!/my_code/*.h
+!/my_code/*.hpp
+!/my_code/*.hh
+
+# Ignore this folder
+/not-relevant
