@@ -82,6 +82,7 @@ int main()
         {
         case 1:
         {
+        question1:
             string answer;
             cout << "You chose grading function, is that correct? (Y/N): ";
             cin >> answer;
@@ -105,17 +106,18 @@ int main()
                 selection = -1;
             }
 
+            else if (tolower(answer[0]) == 'n')
+                goto selection;
+
             else
-            {
-                cout << string(20, '-') << endl;
-                info();
-                cin >> selection;
-            }
+                goto question1;
+
             break;
         }
 
         case 2:
         {
+        question2:
             string answer;
             cout << "You chose withdrawal function, is that correct? (Y/N): ";
             cin >> answer;
@@ -143,17 +145,18 @@ int main()
                 selection = -1;
             }
 
+            else if (tolower(answer[0]) == 'n')
+                goto selection;
+
             else
-            {
-                cout << string(20, '-') << endl;
-                info();
-                cin >> selection;
-            }
+                goto question2;
+
             break;
         }
 
         case 3:
         {
+        question3:
             string answer;
             cout << "You chose result grading function, is that correct? (Y/N): ";
             cin >> answer;
@@ -176,19 +179,26 @@ int main()
                 selection = -1;
             }
 
+            else if (tolower(answer[0]) == 'n')
+                goto selection;
+
             else
-            {
-                cout << string(20, '-') << endl;
-                info();
-                cin >> selection;
-            }
+                goto question3;
+
             break;
         }
 
         default:
+        selection:
+            selection = -1;
             cout << string(20, '-') << endl;
             info();
             cin >> selection;
+            if(!cin){
+                cin.clear();
+                cin.ignore();
+                goto selection;
+            }
             break;
         }
     }
