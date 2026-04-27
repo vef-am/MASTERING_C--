@@ -1,5 +1,5 @@
 CPP = g++
-EXE = gettypeinfo operators if_else_switch while_for
+EXE = gettypeinfo operators if_else_switch while_for break_continue_goto
 
 executables: ${EXE}
 
@@ -14,6 +14,9 @@ if_else_switch: if_else_switch.cpp
 
 while_for: while_for.cpp
 	$(CPP) -o while_for.out while_for.cpp
+
+break_continue_goto: break_continue_goto.cpp
+	$(CPP) -o break_continue_goto.out break_continue_goto.cpp
 
 clean:
 	rm -f *.o *.out
