@@ -1,5 +1,11 @@
 #include <iostream>
-using namespace std;
+#include <string>
+#include <cctype>
+
+using std::cin;
+using std::cout;
+using std::endl;
+using std::string;
 
 int main(){
     while(true){
@@ -17,18 +23,21 @@ int main(){
             i++;
         } while (i <= 10);
 
+        // simple prompt loop — keep is used here as a tiny learning example
         keep:
         cout << "\nDo you want to continue your program (y/n):";
         string answer;
         cin >> answer;
 
-        if(tolower(answer[0]) == 'n')
+        if (answer.empty())
+            goto keep;
+
+        if(std::tolower(static_cast<unsigned char>(answer[0])) == 'n')
             break;
-        else if(tolower(answer[0]) == 'y' || tolower(answer[0]) == 's')
+        else if(std::tolower(static_cast<unsigned char>(answer[0])) == 'y' || std::tolower(static_cast<unsigned char>(answer[0])) == 's')
             continue;
         else
             goto keep;
-        
         
     }
 }

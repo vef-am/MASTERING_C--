@@ -1,5 +1,4 @@
 #include <iostream>
-using namespace std;
 
 int main()
 {
@@ -12,21 +11,21 @@ int main()
     int div = x / y;     // div = 3
     int rem = x % y;     // rem = 0
 
-    cout << "Sum: " << sum << endl
-         << "Subtraction: " << sub << endl
-         << "Product: " << product << endl
-         << "Division: " << div << endl
-         << "Rest: " << rem << endl;
+    std::cout << "Sum: " << sum << std::endl
+              << "Subtraction: " << sub << std::endl
+              << "Product: " << product << std::endl
+              << "Division: " << div << std::endl
+              << "Rest: " << rem << std::endl;
 
     // Assignment Operators
     x += 1; // 31
-    cout << x << endl;
+    std::cout << x << std::endl;
     x -= 15; // 16
-    cout << x << endl;
+    std::cout << x << std::endl;
     x *= 2; // 32
-    cout << x << endl;
+    std::cout << x << std::endl;
     x /= 5; // 6
-    cout << x << endl;
+    std::cout << x << std::endl;
 
     // Comparison Operators
     bool eq = x == y;   // False
@@ -36,12 +35,13 @@ int main()
     bool lteq = x <= y; // True
     bool gteq = x >= y; // False
 
-    cout << "Equal: " << eq << endl
-         << "Not equal: " << neq << endl
-         << "Lower than: " << lt << endl
-         << "Greater than: " << gt << endl
-         << "Lower than equal: " << lteq << endl
-         << "Greater than equal: " << gteq << endl;
+    std::cout << std::boolalpha; // print booleans as true/false
+    std::cout << "Equal: " << eq << std::endl
+              << "Not equal: " << neq << std::endl
+              << "Lower than: " << lt << std::endl
+              << "Greater than: " << gt << std::endl
+              << "Lower than equal: " << lteq << std::endl
+              << "Greater than equal: " << gteq << std::endl;
 
     // Logical Operators
     bool a = true, b = false, c = false;
@@ -51,8 +51,8 @@ int main()
     bool notResult = !a;              // False
     bool andNotResult = (!b) && (!c); // True
 
-    cout << "And result: " << andResult << endl
-         << "Or result: " << orResult << endl
-         << "Not result: " << notResult << endl
-         << "And (not) result: " << andNotResult << endl;
+    std::cout << "And result: " << andResult << std::endl
+              << "Or result: " << orResult << std::endl
+              << "Not result: " << notResult << std::endl
+              << "And (not) result: " << andNotResult << std::endl;
 }

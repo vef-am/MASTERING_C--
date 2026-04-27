@@ -1,5 +1,14 @@
 #include <iostream>
-using namespace std;
+#include <string>
+#include <stdexcept>
+#include <limits>
+
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::invalid_argument;
+using std::exception;
 
 void info()
 {
@@ -164,9 +173,10 @@ int main()
             {
                 diamondPattern(diamondSize);
             }
-            catch (exception &e)
+            catch (const exception &e)
             {
-                cout << e.what() << endl;
+                std::cerr << e.what() << endl;
+                return 1;
             }
 
             selection = -1;
@@ -181,9 +191,10 @@ int main()
             {
                 squarePattern(squareSize);
             }
-            catch (exception &e)
+            catch (const exception &e)
             {
-                cout << e.what() << endl;
+                std::cerr << e.what() << endl;
+                return 1;
             }
 
             selection = -1;
@@ -198,9 +209,10 @@ int main()
             {
                 pyramidPattern(pyramidSize);
             }
-            catch (exception &e)
+            catch (const exception &e)
             {
-                cout << e.what() << endl;
+                std::cerr << e.what() << endl;
+                return 1;
             }
 
             selection = -1;
@@ -215,9 +227,10 @@ int main()
             {
                 inversedPyramidPattern(inversedPyramidSize);
             }
-            catch (exception &e)
+            catch (const exception &e)
             {
-                cout << e.what() << endl;
+                std::cerr << e.what() << endl;
+                return 1;
             }
 
             selection = -1;
@@ -227,6 +240,10 @@ int main()
             cout << string(20, '-') << endl;
             info();
             cin >> selection;
+            if(!cin){
+                cin.clear();
+                cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            }
             break;
         }
     }

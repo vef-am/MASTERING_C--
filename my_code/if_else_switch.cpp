@@ -1,5 +1,9 @@
 #include <iostream>
 #include <typeinfo>
+#include <string>
+#include <cctype>
+#include <stdexcept>
+#include <limits>
 using namespace std;
 
 void info()
@@ -87,7 +91,10 @@ int main()
             cout << "You chose grading function, is that correct? (Y/N): ";
             cin >> answer;
 
-            if (tolower(answer[0]) == 'y' || tolower(answer[0]) == 's')
+            if(answer.empty())
+                goto question1;
+
+            if(std::tolower(static_cast<unsigned char>(answer[0])) == 'y' || std::tolower(static_cast<unsigned char>(answer[0])) == 's')
             {
                 int score;
 
@@ -100,13 +107,14 @@ int main()
                 }
                 catch (const exception &e)
                 {
-                    cout << e.what() << endl;
+                    cerr << e.what() << endl;
+                    return 1;
                 }
 
                 selection = -1;
             }
 
-            else if (tolower(answer[0]) == 'n')
+            else if(std::tolower(static_cast<unsigned char>(answer[0])) == 'n')
                 goto selection;
 
             else
@@ -122,7 +130,10 @@ int main()
             cout << "You chose withdrawal function, is that correct? (Y/N): ";
             cin >> answer;
 
-            if (tolower(answer[0]) == 'y' || tolower(answer[0]) == 's')
+            if(answer.empty())
+                goto question2;
+
+            if(std::tolower(static_cast<unsigned char>(answer[0])) == 'y' || std::tolower(static_cast<unsigned char>(answer[0])) == 's')
             {
                 double balance;
                 cout << "Enter your current balance: $ ";
@@ -139,13 +150,14 @@ int main()
                 }
                 catch (const exception &e)
                 {
-                    cout << e.what() << endl;
+                    cerr << e.what() << endl;
+                    return 1;
                 }
 
                 selection = -1;
             }
 
-            else if (tolower(answer[0]) == 'n')
+            else if(std::tolower(static_cast<unsigned char>(answer[0])) == 'n')
                 goto selection;
 
             else
@@ -161,7 +173,10 @@ int main()
             cout << "You chose result grading function, is that correct? (Y/N): ";
             cin >> answer;
 
-            if (tolower(answer[0]) == 'y' || tolower(answer[0]) == 's')
+            if(answer.empty())
+                goto question3;
+
+            if(std::tolower(static_cast<unsigned char>(answer[0])) == 'y' || std::tolower(static_cast<unsigned char>(answer[0])) == 's')
             {
                 char grade;
                 cout << "Write your grade (A, B, C, D, F): ";
@@ -173,13 +188,14 @@ int main()
                 }
                 catch (const exception &e)
                 {
-                    cout << e.what() << endl;
+                    cerr << e.what() << endl;
+                    return 1;
                 }
 
                 selection = -1;
             }
 
-            else if (tolower(answer[0]) == 'n')
+            else if(std::tolower(static_cast<unsigned char>(answer[0])) == 'n')
                 goto selection;
 
             else
@@ -196,7 +212,7 @@ int main()
             cin >> selection;
             if(!cin){
                 cin.clear();
-                cin.ignore();
+                cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                 goto selection;
             }
             break;

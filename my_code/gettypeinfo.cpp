@@ -1,11 +1,13 @@
 #include <iostream>
 #include <typeinfo>
-using namespace std;
+
+using std::cout;
+using std::endl;
 
 int main() {
 
-    float num1 = 4.1;
-    int num2 = num1;
+    float num1 = 4.1f;
+    int num2 = static_cast<int>(num1); // explicit cast to show truncation
 
     cout << typeid(num1).name() << endl;
     cout << typeid(num2).name() << endl;
