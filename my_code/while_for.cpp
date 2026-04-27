@@ -11,44 +11,6 @@ void info()
          << "To end, write '0'" << endl;
 }
 
-// Makes a diamond pattern
-/*
- -  *
- - ***
- -*****
- - ***
- -  *
- */
-void diamondPattern(int diamondSize)
-{
-    if (diamondSize < 0)
-        throw invalid_argument("ERROR! Size must be a non-negative number.");
-
-    // Upper half
-    for (int i = 1; i <= diamondSize; i++)
-    {
-        for (int j = 1; j <= diamondSize - i; j++)
-            cout << ' ';
-
-        for (int j = 1; j <= 2 * i - 1; j++)
-            cout << '*';
-
-        cout << endl;
-    }
-    
-    // Lower half
-    for (int i = diamondSize - 1; i > 0; i--)
-    {
-        for (int j = 1; j <= diamondSize - i; j++)
-            cout << ' ';
-
-        for (int j = 1; j <= 2 * i - 1; j++)
-            cout << '*';
-
-        cout << endl;
-    }
-}
-
 // Makes a square pattern
 /*
     ****
@@ -120,6 +82,67 @@ void inversedPyramidPattern(int inversedPyramidSize)
 
         cout << endl;
     }
+}
+
+// Makes a diamond pattern
+/*
+ -  *
+ - ***
+ -*****
+ - ***
+ -  *
+ */
+void diamondPattern(int diamondSize)
+{
+    if (diamondSize < 0)
+        throw invalid_argument("ERROR! Size must be a non-negative number.");
+
+    // Upper half
+    pyramidPattern(diamondSize);
+
+    // Lower half
+    for (int i = diamondSize - 1; i > 0; i--)
+    {
+        for (int j = 1; j <= diamondSize - i; j++)
+            cout << ' ';
+
+        for (int j = 1; j <= 2 * i - 1; j++)
+            cout << '*';
+
+        cout << endl;
+    }
+
+    /*
+        Why this decision?
+        Because the upper half of the diamond pattern is the same as the pyramid pattern
+        so there is no need to repeat code
+    */
+
+    /* ---- OLD: ----
+    // Upper half
+    for (int i = 1; i <= diamondSize; i++)
+    {
+        for (int j = 1; j <= diamondSize - i; j++)
+            cout << ' ';
+
+        for (int j = 1; j <= 2 * i - 1; j++)
+            cout << '*';
+
+        cout << endl;
+    }
+    
+    // Lower half
+    for (int i = diamondSize - 1; i > 0; i--)
+    {
+        for (int j = 1; j <= diamondSize - i; j++)
+            cout << ' ';
+
+        for (int j = 1; j <= 2 * i - 1; j++)
+            cout << '*';
+
+        cout << endl;
+    }
+    */
 }
 
 int main()
