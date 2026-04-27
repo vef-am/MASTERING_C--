@@ -2,6 +2,15 @@
 #include <typeinfo>
 using namespace std;
 
+void info()
+{
+    cout << "Select the function to try:" << endl
+         << "1. Grading function" << endl
+         << "2. Withdrawal function" << endl
+         << "3. Result grading function" << endl
+         << "To end, write '0'" << endl;
+}
+
 char grading(int score)
 {
     if (score > 100)
@@ -65,13 +74,7 @@ string resultGrading(char grade)
 
 int main()
 {
-    int selection;
-    cout << "Select the function to try:" << endl
-         << "1. Grading function" << endl
-         << "2. Withdrawal function" << endl
-         << "3. Result grading function" << endl
-         << "To end, write '0'" << endl;
-    cin >> selection;
+    int selection = -1;
 
     while (selection != 0)
     {
@@ -105,11 +108,7 @@ int main()
             else
             {
                 cout << string(20, '-') << endl;
-                cout << "Select the function to try:" << endl
-                     << "1. Grading function" << endl
-                     << "2. Withdrawal function" << endl
-                     << "3. Result grading function" << endl
-                     << "To end, write '0'" << endl;
+                info();
                 cin >> selection;
             }
             break;
@@ -147,11 +146,7 @@ int main()
             else
             {
                 cout << string(20, '-') << endl;
-                cout << "Select the function to try:" << endl
-                     << "1. Grading function" << endl
-                     << "2. Withdrawal function" << endl
-                     << "3. Result grading function" << endl
-                     << "To end, write '0'" << endl;
+                info();
                 cin >> selection;
             }
             break;
@@ -184,11 +179,7 @@ int main()
             else
             {
                 cout << string(20, '-') << endl;
-                cout << "Select the function to try:" << endl
-                     << "1. Grading function" << endl
-                     << "2. Withdrawal function" << endl
-                     << "3. Result grading function" << endl
-                     << "To end, write '0'" << endl;
+                info();
                 cin >> selection;
             }
             break;
@@ -196,11 +187,7 @@ int main()
 
         default:
             cout << string(20, '-') << endl;
-            cout << "Select the function to try:" << endl
-                 << "1. Grading function" << endl
-                 << "2. Withdrawal function" << endl
-                 << "3. Result grading function" << endl
-                 << "To end, write '0'" << endl;
+            info();
             cin >> selection;
             break;
         }
