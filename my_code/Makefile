@@ -13,6 +13,7 @@ if_else_switch: if_else_switch.cpp
 	$(CPP) -o if_else_switch.out if_else_switch.cpp
 
 while_for: while_for.cpp
+	$(CPP) -o while_for.out while_for.cpp
 
 clean:
 	rm -f *.o *.out
