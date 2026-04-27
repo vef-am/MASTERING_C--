@@ -126,11 +126,12 @@ New `.cpp` files are added to `my_code/` as I finish lessons; this README is upd
 
 Inside `my_code/` you will find:
 
-- `break_continue_goto.cpp` - loop and control-flow practice.
-- `gettypeinfo.cpp` - type inspection and numeric conversion practice.
-- `if_else_switch.cpp` - branching, exceptions, and interactive input practice.
-- `operators.cpp` - arithmetic, comparison, logical, and assignment operator practice.
-- `while_for.cpp` - loop-based pattern printing and exception handling practice.
+- `functions.cpp` - percentage calculation and grading logic (lesson 16).
+- `break_continue_goto.cpp` - loop and control-flow practice (lesson 13).
+- `gettypeinfo.cpp` - type inspection and numeric conversion practice (lesson 6).
+- `if_else_switch.cpp` - branching, exceptions, and interactive input practice (lesson 9).
+- `operators.cpp` - arithmetic, comparison, logical, and assignment operator practice (lesson 7).
+- `while_for.cpp` - loop-based pattern printing and exception handling practice (lesson 11).
 
 **Per-file comparisons:** detailed, per-file comparisons and notes have been moved to `my_code/notes/` to keep this README concise. See `my_code/notes/` for per-file origins and improvement notes (examples: `functions.md`, `if_else_switch.md`, `operators.md`, etc.).
 
